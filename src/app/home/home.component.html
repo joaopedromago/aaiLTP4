@@ -1,0 +1,132 @@
+<div class="wrapper">
+    <div class="page-header section-dark" style="background-image: url('assets/img/home-banner.jpg')">
+        <div class="filter"></div>
+        <div class="content-center">
+            <div class="container">
+                <div class="title-brand">
+                    <h1 class="presentation-title">
+                        <b>fit</b>Food</h1>
+                </div>
+            </div>
+        </div>
+        <div class="moving-clouds" style="background-image: url('assets/img/clouds.png'); "></div>
+        <h6 class=" category-absolute ml-auto mr-auto">Designed and coded by
+            <a href="https://www.linkedin.com/in/zaconou" target="_blank">
+                João Mago
+            </a>e
+            <a href="https://www.linkedin.com/in/pedrohqesilva" target="_blank">
+                Pedro Silva
+            </a>
+        </h6>
+    </div>
+    <div class="main">
+        <div class="section section-nucleo-icons">
+            <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+            <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+            <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="row rtl text-center">
+                        <div class="col ">
+                            <h1 class="font-ir-bold section-name">Pratos disponiveis para pronta entrega!</h1>
+                            <h6>
+                                Entregamos em menos de 15 minutos qualquer uma das opções de pratos abaixo!
+                            </h6>
+                            <span class="text-dark float-right d-inline-block small">Sem taxa de entrega</span>
+                        </div>
+                    </div>
+                    <div class="row rtl text-right mt-5">
+                        <div class="col-md-2" *ngFor="let item of itens; let i = index">
+                            <div class="product-0507">
+                                <div class="card border-0 text-center">
+                                    <span *ngIf="item.adicionado" class="label label-info">Adicionado!</span>
+                                    <div class="card-img">
+                                        <img src="http://www.mihanmedia.ir/userfile/p-1.jpg" class="img-fluid">
+                                    </div>
+                                    <a class="card-title small mt-2 text-dark">{{item.nome}}</a>
+                                    <div class="card-body p-0">
+                                        <div class="not-exist bg-danger float-left rounded-circle text-light p-1 small text-center">
+                                            {{item.valor | currency:'BRL':true:'1.2-2'}}
+                                        </div>
+                                    </div>
+                                    <div class="card-footer border-0 bg-white p-0">
+                                        <span class="text-muted small">
+                                            <i class="fa fa-shopping-cart"></i>
+                                            <a style="cursor: pointer;" *ngIf="!item.adicionado" (click)="alterarStatusItem(i)">Adicionar</a>
+                                            <a style="cursor: pointer;" *ngIf="item.adicionado" (click)="alterarStatusItem(i)">Remover</a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section section-dark">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto text-center">
+                        <h3 class="title">
+                            <b>O fitFood é o maior vendedor de marmita fitness do Brasil!</b>
+                        </h3>
+                        <p class="description">
+                            Começar um projeto de vida saudável é uma tarefa difícil, mas não impossível. Com alguns ajustes na rotina, é possível se
+                            livrar dos hábitos ruins e chegar lá! E para te ajudar nesta jornada, existe o fitFood!
+                            <br> Deixar hábitos para trás, como comer de forma desregrada e ser sedentária, não é a missão mais
+                            fácil do mundo. E para ajudar você nessa missão, temos planos mensais personalizados com pratos
+                            fundamentais para você reeducar a alimentação e, o mais importante, de forma contínua e definitiva.
+                            E tudo isso sem precisar sair de casa!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section section-image section-login" style="background-image: url('assets/img/login-image.jpg');">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-12 ml-auto mr-auto">
+                        <div class="card card-register">
+                            <h3 class="title">Bem vindo!</h3>
+                            <form class="register-form">
+                                <label>Email</label>
+                                <div class="input-group form-group-no-border">
+                                    <span class="input-group-addon">
+                                        <i class="nc-icon nc-email-85"></i>
+                                    </span>
+                                    <input type="text" class="form-control" placeholder="Email">
+                                </div>
+
+                                <label>Senha</label>
+                                <div class="input-group form-group-no-border">
+                                    <span class="input-group-addon">
+                                        <i class="nc-icon nc-key-25"></i>
+                                    </span>
+                                    <input type="text" class="form-control" placeholder="Password">
+                                </div>
+                                <button class="btn btn-danger btn-block btn-round">Cadastre-se</button>
+                            </form>
+                            <div class="forgot">
+                                <a href="#" class="btn btn-link btn-danger">Esqueci minha senha!</a>
+                            </div>
+                        </div>
+                        <div class="col text-center" routerLinkActive="active">
+                            <a [routerLink]="['/signup']" class="btn btn-outline-neutral btn-round btn-lg">Registre-se!</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto text-center">
+                        <h2 class="title">Do you like what you see?</h2>
+                        <p class="description">Cause if you do, it can be yours for Free. Hit the button below and download it. Start a new project
+                            or give an old Bootstrap 4 project a new look.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

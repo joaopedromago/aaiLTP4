@@ -6,6 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home.component';
+import { ListagemItensComponent } from '../shared/listagem-itens/listagem-itens.component';
 
 @NgModule({
     imports: [
@@ -14,8 +15,8 @@ import { HomeComponent } from './home.component';
         FormsModule,
         RouterModule
     ],
-    declarations: [ HomeComponent ],
-    exports: [ HomeComponent ],
+    declarations: [HomeComponent],
+    exports: [HomeComponent],
     providers: []
 })
 export class HomeModule { }
